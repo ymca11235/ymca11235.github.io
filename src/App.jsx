@@ -134,7 +134,7 @@ const App = () => {
 
       {/* 下方：頁尾 */}
       <footer className="relative z-10 text-[9px] md:text-xs tracking-[0.4em] text-[#A39182] mb-1 md:mb-6 uppercase font-sans shrink-0">
-        © 2025 創思教育機構. All rights reserved.
+        © 2025 創思文教機構. All rights reserved.
       </footer>
 
     </div>
