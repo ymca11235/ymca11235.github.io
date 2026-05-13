@@ -75,7 +75,7 @@ const App = () => {
       {/* 📱 手機版專屬：右上角聯絡按鈕 */}
       <div className="absolute top-4 right-4 z-50 flex flex-row gap-2 md:hidden">
         <a href="https://www.facebook.com/share/1B8JNbbRiV/" target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 bg-[#3E2B23] text-[#F9F6F0] text-[9px] font-bold tracking-[0.2em] text-center shadow-sm whitespace-nowrap">
-          揚名創思粉絲團
+          揚名創思親子共學空間粉絲團
         </a>
         <a href="https://line.me/ti/p/5LzAgsgfsb" target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 border border-[#8C6A4F] text-[#8C6A4F] text-[9px] font-bold tracking-[0.2em] text-center shadow-sm bg-[#F9F6F0]/80 backdrop-blur-sm whitespace-nowrap">
           LINE 官方聯繫
@@ -153,7 +153,7 @@ const App = () => {
           {/* 💻 電腦版專屬：影片下方按鈕與 QR Code 區塊 */}
           <div className="hidden md:flex w-full flex-col gap-3 mt-1">
             <a href="https://www.facebook.com/share/1B8JNbbRiV/" target="_blank" rel="noopener noreferrer" className="w-full py-3 bg-[#3E2B23] text-[#F9F6F0] text-sm md:text-base font-bold tracking-[0.3em] hover:bg-[#8C6A4F] transition-colors">
-              揚名創思粉絲團
+              揚名創思親子共學空間粉絲團
             </a>
             
             <div className="w-full border-2 border-[#8C6A4F] flex items-center justify-center gap-5 p-2 bg-[#FDFBF7]/80 hover:bg-white transition-colors">
