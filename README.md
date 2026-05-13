@@ -1,16 +1,12 @@
-# React + Vite
+# 🚀 揚名創思網頁 - 更新指令備忘錄
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+每次修改完程式碼並「存檔 (Ctrl+S)」後，請在 Terminal 輸入以下三行指令：
 
-Currently, two official plugins are available:
+1. 把所有修改加入暫存：
+git add .
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+2. 幫這次修改寫個標籤 (引號內的字可改)：
+git commit -m "更新網頁內容"
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+3. 發射上傳到 GitHub (Vercel 會自動更新)：
+git push

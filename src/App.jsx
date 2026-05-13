@@ -1,10 +1,12 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import HeroBackground from './components/HeroBackground';
 import { tutors } from './data/tutors';
 
 const App = () => {
   const scrollContainerRef = useRef(null);
+  const [isHovered, setIsHovered] = useState(false);
 
+  // 滑鼠滾輪手動滑動功能
   useEffect(() => {
     const handleWheel = (e) => {
       if (scrollContainerRef.current) {
@@ -24,6 +26,38 @@ const App = () => {
       }
     };
   }, []);
+
+  // 🌟 升級版魔法：絲滑無縫跑馬燈
+  useEffect(() => {
+    let animationId;
+    const container = scrollContainerRef.current;
+    // 使用變數記錄精確位置，確保滑動順暢
+    let exactScrollLeft = container ? container.scrollLeft : 0;
+
+    const scroll = () => {
+      if (container && !isHovered) {
+        exactScrollLeft += 0.5; // 🌟 這裡控制速度：數字越小越慢，0.5 是一個有質感的緩慢流動感
+
+        // 無縫接軌魔法：當滑動距離超過總寬度的一半 (也就是第一組陣列結束時)
+        // 瞬間把捲軸拉回起點。因為第一組跟第二組長一樣，視覺上完全不會閃爍！
+        if (exactScrollLeft >= container.scrollWidth / 2) {
+          exactScrollLeft -= container.scrollWidth / 2;
+        }
+        
+        container.scrollLeft = exactScrollLeft;
+      } else if (container && isHovered) {
+        // 當滑鼠停住或手動介入時，把真實的滾動位置同步回來
+        exactScrollLeft = container.scrollLeft;
+      }
+      animationId = requestAnimationFrame(scroll);
+    };
+
+    animationId = requestAnimationFrame(scroll);
+    return () => cancelAnimationFrame(animationId);
+  }, [isHovered]);
+
+  // 🌟 把陣列複製一倍，用來做無縫銜接
+  const displayTutors = [...tutors, ...tutors];
 
   return (
     <div className="relative h-[100dvh] md:h-screen w-full overflow-hidden bg-[#F9F6F0] text-[#3E2B23] font-serif flex flex-col justify-between items-center px-4 py-2 md:p-6 box-border">
@@ -64,15 +98,20 @@ const App = () => {
       {/* 中間：彈性壓縮區塊 */}
       <div className="relative z-10 w-full max-w-7xl flex flex-col md:grid md:grid-cols-3 gap-2 md:gap-8 items-center justify-start flex-1 min-h-0 my-2 md:my-auto px-1 md:px-4">
 
-        {/* 師資區塊 */}
+        {/* 師資區塊：移除 snap 屬性，讓它自由滑動 */}
         <div 
           ref={scrollContainerRef}
-          className="md:col-span-2 flex overflow-x-auto snap-x snap-mandatory gap-3 pb-1 w-full hide-scrollbar items-stretch scroll-smooth cursor-ew-resize flex-1 min-h-0"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          onTouchStart={() => setIsHovered(true)}
+          onTouchEnd={() => setIsHovered(false)}
+          className="md:col-span-2 flex overflow-x-auto gap-3 pb-1 w-full hide-scrollbar items-stretch cursor-ew-resize flex-1 min-h-0"
         >
-          {tutors.map(tutor => (
+          {displayTutors.map((tutor, index) => (
             <div 
-              key={tutor.id} 
-              className="w-[260px] md:min-w-[320px] shrink-0 snap-center flex flex-col items-center justify-start p-4 md:p-8 bg-white/70 md:bg-white/60 backdrop-blur-md border border-[#E3DCD2] shadow-sm hover:shadow-md transition overflow-y-auto hide-scrollbar mx-auto md:mx-0"
+              // 因為複製了陣列，key 需要加上 index 避免重複
+              key={`${tutor.id}-${index}`} 
+              className="w-[260px] md:min-w-[320px] shrink-0 flex flex-col items-center justify-start p-4 md:p-8 bg-white/70 md:bg-white/60 backdrop-blur-md border border-[#E3DCD2] shadow-sm hover:shadow-md transition overflow-y-auto hide-scrollbar mx-auto md:mx-0"
             >
               <div className="border border-[#8C6A4F] rounded-md px-4 py-1.5 md:px-6 md:py-2 mb-2 md:mb-6 bg-[#FDFBF7] shadow-sm shrink-0">
                 <h4 className="text-lg md:text-3xl font-bold tracking-[0.2em] text-[#3E2B23]">{tutor.name}</h4>
@@ -85,8 +124,8 @@ const App = () => {
               <div className="w-full h-px bg-[#D4C8BE] mb-2 md:mb-6 shrink-0"></div>
               
               <div className="flex flex-col gap-1.5 md:gap-3 w-full text-left px-1 pb-1">
-                {tutor.background?.map((item, index) => (
-                  <p key={index} className="text-[10px] md:text-base text-[#6B574B] font-medium tracking-wide leading-relaxed flex items-start">
+                {tutor.background?.map((item, i) => (
+                  <p key={i} className="text-[10px] md:text-base text-[#6B574B] font-medium tracking-wide leading-relaxed flex items-start">
                     <span className="text-[#8C6A4F] mr-2 opacity-70 mt-[3px] md:mt-1 text-[8px] md:text-sm">◆</span>
                     <span>{item}</span>
                   </p>
@@ -96,7 +135,7 @@ const App = () => {
           ))}
         </div>
 
-        {/* 影片與聯絡區塊 (縮小 gap-8 為 gap-4) */}
+        {/* 影片與聯絡區塊 */}
         <div className="flex flex-col items-center justify-center gap-2 md:gap-4 text-center bg-white/70 md:bg-white/60 backdrop-blur-md border border-[#E3DCD2] p-2.5 md:p-8 shadow-sm w-[220px] md:w-full shrink-0 mx-auto rounded-sm">
           <div className="w-full">
             <h3 className="text-[9px] md:text-base tracking-[0.3em] mb-1.5 md:mb-4 font-bold text-[#8C6A4F]">教學影片</h3>
@@ -111,20 +150,17 @@ const App = () => {
             </div>
           </div>
 
-          {/* 💻 電腦版專屬：影片下方按鈕與 QR Code 區塊 (縮小 mt-2 為 mt-1) */}
+          {/* 💻 電腦版專屬：影片下方按鈕與 QR Code 區塊 */}
           <div className="hidden md:flex w-full flex-col gap-3 mt-1">
-            <a href="https://www.facebook.com/share/1B8JNbbRiV/" target="_blank" rel="noopener noreferrer" className="w-full py-3 bg-[#3E2B23] text-[#F9F6F0] text-sm md:text-lg font-bold tracking-[0.3em] hover:bg-[#8C6A4F] transition-colors">
+            <a href="https://www.facebook.com/share/1B8JNbbRiV/" target="_blank" rel="noopener noreferrer" className="w-full py-3 bg-[#3E2B23] text-[#F9F6F0] text-sm md:text-base font-bold tracking-[0.3em] hover:bg-[#8C6A4F] transition-colors">
               揚名創思粉絲團
             </a>
             
-            {/* 🌟 LINE QR Code 放大版 */}
             <div className="w-full border-2 border-[#8C6A4F] flex items-center justify-center gap-5 p-2 bg-[#FDFBF7]/80 hover:bg-white transition-colors">
-              {/* 圖片改為 w-20 h-20 並加上白底 */}
               <img src="/line-qr.png" alt="LINE QR Code" className="w-20 h-20 object-contain shadow-sm border border-[#E3DCD2] bg-white p-1" />
               <div className="flex flex-col text-left">
-                {/* 文字稍微跟著放大一點點以平衡比例 */}
-                <span className="text-[#3E2B23] text-sm md:text-lg font-bold tracking-[0.2em]">LINE 官方聯繫</span>
-                <span className="text-[#8C6A4F] text-[10px] md:text-base tracking-widest mt-1">請使用手機掃描加入</span>
+                <span className="text-[#3E2B23] text-sm md:text-base font-bold tracking-[0.2em]">LINE 官方聯繫</span>
+                <span className="text-[#8C6A4F] text-[10px] md:text-xs tracking-widest mt-1">請使用手機掃描加入</span>
               </div>
             </div>
           </div>
@@ -134,7 +170,7 @@ const App = () => {
 
       {/* 下方：頁尾 */}
       <footer className="relative z-10 text-[9px] md:text-xs tracking-[0.4em] text-[#A39182] mb-1 md:mb-6 uppercase font-sans shrink-0">
-        © 2025 創思文教機構. All rights reserved.
+        © 2025 創思教育機構. All rights reserved.
       </footer>
 
     </div>
