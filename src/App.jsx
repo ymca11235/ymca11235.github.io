@@ -172,6 +172,31 @@ const App = () => {
       <footer className="relative z-10 text-[9px] md:text-xs tracking-[0.4em] text-[#A39182] mb-1 md:mb-6 uppercase font-sans shrink-0">
         © 2025 創思教育機構. All rights reserved.
       </footer>
+{/* --- 其他網頁內容都在上面 --- */}
+
+      {/* 右下角浮動聯絡按鈕 (一鍵撥號) */}
+      <a
+        href="tel:0900206910"  /* 👈 記得在這裡換成你真正的電話號碼 */
+        className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-zinc-900 text-white rounded-full shadow-2xl border border-white/20 hover:scale-110 hover:bg-zinc-800 transition-all duration-300 group"
+        aria-label="快速撥號"
+      >
+        {/* 電腦版專屬提示：滑鼠移過去才優雅浮現的文字 */}
+        <span className="absolute right-16 px-3 py-1.5 bg-black text-white text-xs tracking-widest rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none border border-white/10 shadow-lg">
+          快速撥號
+        </span>
+        
+        {/* 電話圖標 (自帶微弱心跳呼吸燈效果，滑鼠放上去會停止) */}
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          fill="none" 
+          viewBox="0 0 24 24" 
+          strokeWidth={1.5} 
+          stroke="currentColor" 
+          className="w-6 h-6 animate-pulse group-hover:animate-none"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.896-1.596-5.48-4.08-7.076-6.975l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+        </svg>
+      </a>
 
     </div>
   );
