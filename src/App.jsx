@@ -183,7 +183,7 @@ const App = () => {
         <a href="https://www.facebook.com/share/1B8JNbbRiV/" target="_blank" rel="noopener noreferrer" className="relative w-10 h-10 flex items-center justify-center transition-transform duration-300 active:scale-90">
           <img src="/fb-icon.png" alt="FB" className="w-full h-full object-contain rounded-[9px]" />
         </a>
-        <a href="tel:071234567" className="relative w-10 h-10 flex items-center justify-center transition-transform duration-300 active:scale-90">
+        <a href="tel:0900206910" className="relative w-10 h-10 flex items-center justify-center transition-transform duration-300 active:scale-90">
           <img src="/phone-icon.jpg" alt="Phone" className="w-full h-full object-contain rounded-[9px]" onError={(e) => { e.target.onerror = null; e.target.src = "/phone-icon.png"; }} />
         </a>
       </div>
@@ -245,7 +245,7 @@ const App = () => {
           <img src="/ig-icon.png" alt="Instagram" className="w-full h-full object-contain rounded-[9px]" />
         </a>
 
-        <a href="tel:071234567" className="relative w-10 h-10 flex items-center justify-center hover:scale-110 transition-transform duration-300 group">
+        <a href="tel:0900206910" className="relative w-10 h-10 flex items-center justify-center hover:scale-110 transition-transform duration-300 group">
           <span className="absolute right-14 px-3 py-1.5 bg-[#3E2B23] text-white text-[11px] tracking-widest rounded-md opacity-0 group-hover:opacity-100 whitespace-nowrap shadow-md pointer-events-none transition-opacity z-20">快速撥號</span>
           <img src="/phone-icon.jpg" alt="Phone" className="w-full h-full object-contain rounded-[9px]" onError={(e) => { e.target.onerror = null; e.target.src = "/phone-icon.png"; }} />
         </a>
