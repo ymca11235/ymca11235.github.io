@@ -126,7 +126,7 @@ const App = () => {
           揚名創思 一對一家教
         </h1>
         <h2 className="text-[13px] md:text-2xl font-bold tracking-widest md:tracking-[0.15em] leading-relaxed md:leading-tight text-[#6B574B]">
-          高雄地區 國小/國中/高中 到府/線上 免費諮詢<br />
+          高雄地區 國小/國中/高中到府/線上 免費諮詢<br />
           <span className="text-[10px] md:text-lg text-[#8C6A4F] font-bold block mt-1 md:mt-2 tracking-[0.2em]">
             因材施教 
             <span className="mx-1.5 md:mx-3 text-[#A39182] font-light font-sans scale-110 inline-block">×</span> 
@@ -168,29 +168,23 @@ const App = () => {
       </div>
 
       {/* ========================================= */}
-      {/* 🚀 3. 【手機版專屬】置中排列的聯絡樞紐 🚀 */}
+      {/* 3. 【手機版專屬】置中排列的聯絡樞紐 */}
       {/* ========================================= */}
-      {/* ✨ 加上 md:hidden，這排圖標在電腦版會自動隱藏 ✨ */}
-      <div className="relative z-10 flex md:hidden justify-center items-center gap-3 my-1 shrink-0 w-full px-2">
-        
-        <a href="https://www.instagram.com/ymca11235?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" className="relative w-9 h-9 rounded-[10px] shadow-sm flex items-center justify-center border border-[#E3DCD2] bg-white">
-          <img src="/ig-icon.png" alt="Instagram" className="w-full h-full object-cover rounded-[9px]" />
+      <div className="relative z-10 flex md:hidden justify-center items-center gap-3.5 my-1.5 shrink-0 w-full px-2">
+        <a href="https://www.instagram.com/ymca11235?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" className="relative w-10 h-10 flex items-center justify-center transition-transform duration-300 active:scale-90">
+          <img src="/ig-icon.png" alt="Instagram" className="w-full h-full object-contain rounded-[9px]" />
         </a>
-
-        <a href="https://www.youtube.com/@YMCALabTutor" target="_blank" rel="noopener noreferrer" className="relative w-9 h-9 rounded-[10px] shadow-sm flex items-center justify-center border border-[#E3DCD2] bg-white">
-          <img src="/yt-icon.png" alt="YouTube" className="w-full h-full object-cover rounded-[9px]" />
+        <a href="https://www.youtube.com/@YMCALabTutor" target="_blank" rel="noopener noreferrer" className="relative w-10 h-10 flex items-center justify-center transition-transform duration-300 active:scale-90">
+          <img src="/yt-icon.png" alt="YouTube" className="w-full h-full object-contain rounded-[9px]" />
         </a>
-
-        <a href="https://line.me/ti/p/5LzAgsgfsb" target="_blank" rel="noopener noreferrer" className="relative w-11 h-11 rounded-[10px] shadow-md flex items-center justify-center border border-[#E3DCD2] bg-white z-10">
-          <img src="/line-icon.png" alt="LINE" className="w-full h-full object-cover rounded-[9px]" />
+        <a href="https://line.me/ti/p/5LzAgsgfsb" target="_blank" rel="noopener noreferrer" className="relative w-10 h-10 flex items-center justify-center transition-transform duration-300 active:scale-90">
+          <img src="/line-icon.png" alt="LINE" className="w-full h-full object-contain rounded-[9px]" />
         </a>
-
-        <a href="https://www.facebook.com/share/1B8JNbbRiV/" target="_blank" rel="noopener noreferrer" className="relative w-9 h-9 rounded-[10px] shadow-sm flex items-center justify-center border border-[#E3DCD2] bg-white">
-          <img src="/fb-icon.png" alt="FB" className="w-full h-full object-cover rounded-[9px]" />
+        <a href="https://www.facebook.com/share/1B8JNbbRiV/" target="_blank" rel="noopener noreferrer" className="relative w-10 h-10 flex items-center justify-center transition-transform duration-300 active:scale-90">
+          <img src="/fb-icon.png" alt="FB" className="w-full h-full object-contain rounded-[9px]" />
         </a>
-
-        <a href="tel:071234567" className="relative w-9 h-9 rounded-[10px] shadow-sm flex items-center justify-center border border-[#E3DCD2] bg-white">
-          <img src="/phone-icon.jpg" alt="Phone" className="w-full h-full object-cover rounded-[9px]" onError={(e) => { e.target.onerror = null; e.target.src = "/phone-icon.png"; }} />
+        <a href="tel:071234567" className="relative w-10 h-10 flex items-center justify-center transition-transform duration-300 active:scale-90">
+          <img src="/phone-icon.jpg" alt="Phone" className="w-full h-full object-contain rounded-[9px]" onError={(e) => { e.target.onerror = null; e.target.src = "/phone-icon.png"; }} />
         </a>
       </div>
 
@@ -198,8 +192,6 @@ const App = () => {
       {/* 4. 底部：影片與家長感謝區 */}
       {/* ========================================= */}
       <div className="relative z-10 w-full flex flex-col md:flex-row gap-3 md:gap-5 items-center justify-center shrink-0 mb-2 md:mb-3">
-        
-        {/* 左側半邊：教學影片 */}
         <div className="hidden md:flex w-[320px] lg:w-[360px] flex-col items-center bg-white/60 backdrop-blur-md border border-[#E3DCD2] p-2 shadow-sm rounded-sm shrink-0">
           <h3 className="text-[10px] md:text-xs tracking-[0.3em] mb-1.5 font-bold text-[#8C6A4F]">教學影片</h3>
           <div className="aspect-video w-full bg-[#E3DCD2] p-1">
@@ -207,7 +199,6 @@ const App = () => {
           </div>
         </div>
 
-        {/* 右側半邊：家長感謝區 */}
         <div className="flex w-full md:w-[320px] lg:w-[360px] flex-col items-center bg-white/70 md:bg-white/60 backdrop-blur-md border border-[#E3DCD2] p-2 shadow-sm rounded-sm overflow-hidden">
           <h3 className="text-[10px] md:text-xs tracking-[0.3em] mb-1.5 font-bold text-[#8C6A4F]">家長好評感謝區</h3>
           <div ref={testimonialRef} className="flex overflow-x-auto gap-2.5 w-full hide-scrollbar items-start px-1.5 pb-1">
@@ -219,7 +210,6 @@ const App = () => {
                >
                  <img src={img} alt="感謝截圖" className="w-full h-full object-cover" onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }} />
                  <span className="hidden text-[10px] text-[#A39182] tracking-widest text-center px-2">照片準備中</span>
-                 
                  <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="white" className="w-6 h-6 md:w-8 md:h-8">
                      <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
@@ -236,29 +226,28 @@ const App = () => {
       </footer>
 
       {/* ========================================= */}
-      {/* 🚀 【電腦版專屬】右下角懸浮聯絡列 🚀 */}
+      {/* 🚀 【電腦版專屬】右下角懸浮聯絡列 (淨透無框版) 🚀 */}
       {/* ========================================= */}
-      {/* ✨ 加上 hidden md:flex，這排懸浮圖標只在電腦版出現 ✨ */}
-      <div className="fixed bottom-8 right-6 z-50 hidden md:flex flex-col items-center gap-2.5">
+      <div className="fixed bottom-8 right-6 z-50 hidden md:flex flex-col items-center gap-3">
         
-        <a href="https://line.me/ti/p/5LzAgsgfsb" target="_blank" rel="noopener noreferrer" className="relative w-10 h-10 rounded-xl shadow-xl flex items-center justify-center hover:scale-110 transition-all duration-300 group overflow-hidden border border-white/10 bg-white">
-          <span className="absolute right-14 px-3 py-1.5 bg-black text-white text-xs tracking-widest rounded-md opacity-0 group-hover:opacity-100 whitespace-nowrap border border-white/10 shadow-lg pointer-events-none">LINE 諮詢</span>
-          <img src="/line-icon.png" alt="LINE" className="w-full h-full object-cover" />
+        <a href="https://line.me/ti/p/5LzAgsgfsb" target="_blank" rel="noopener noreferrer" className="relative w-10 h-10 flex items-center justify-center hover:scale-110 transition-transform duration-300 group">
+          <span className="absolute right-14 px-3 py-1.5 bg-[#3E2B23] text-white text-[11px] tracking-widest rounded-md opacity-0 group-hover:opacity-100 whitespace-nowrap shadow-md pointer-events-none transition-opacity z-20">LINE 諮詢</span>
+          <img src="/line-icon.png" alt="LINE" className="w-full h-full object-contain rounded-[9px]" />
         </a>
         
-        <a href="https://www.facebook.com/share/1B8JNbbRiV/" target="_blank" rel="noopener noreferrer" className="relative w-10 h-10 rounded-xl shadow-xl flex items-center justify-center hover:scale-110 transition-all duration-300 group overflow-hidden border border-white/10 bg-white">
-          <span className="absolute right-14 px-3 py-1.5 bg-black text-white text-xs tracking-widest rounded-md opacity-0 group-hover:opacity-100 whitespace-nowrap border border-white/10 shadow-lg pointer-events-none">粉絲專頁</span>
-          <img src="/fb-icon.png" alt="FB" className="w-full h-full object-cover" />
+        <a href="https://www.facebook.com/share/1B8JNbbRiV/" target="_blank" rel="noopener noreferrer" className="relative w-10 h-10 flex items-center justify-center hover:scale-110 transition-transform duration-300 group">
+          <span className="absolute right-14 px-3 py-1.5 bg-[#3E2B23] text-white text-[11px] tracking-widest rounded-md opacity-0 group-hover:opacity-100 whitespace-nowrap shadow-md pointer-events-none transition-opacity z-20">粉絲專頁</span>
+          <img src="/fb-icon.png" alt="FB" className="w-full h-full object-contain rounded-[9px]" />
         </a>
 
-        <a href="https://www.instagram.com/ymca11235?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" className="relative w-10 h-10 rounded-xl shadow-xl flex items-center justify-center hover:scale-110 transition-all duration-300 group overflow-hidden border border-white/10 bg-white">
-          <span className="absolute right-14 px-3 py-1.5 bg-black text-white text-xs tracking-widest rounded-md opacity-0 group-hover:opacity-100 whitespace-nowrap border border-white/10 shadow-lg pointer-events-none">Instagram 諮詢</span>
-          <img src="/ig-icon.png" alt="Instagram" className="w-full h-full object-cover" />
+        <a href="https://www.instagram.com/ymca11235?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" className="relative w-10 h-10 flex items-center justify-center hover:scale-110 transition-transform duration-300 group">
+          <span className="absolute right-14 px-3 py-1.5 bg-[#3E2B23] text-white text-[11px] tracking-widest rounded-md opacity-0 group-hover:opacity-100 whitespace-nowrap shadow-md pointer-events-none transition-opacity z-20">Instagram 諮詢</span>
+          <img src="/ig-icon.png" alt="Instagram" className="w-full h-full object-contain rounded-[9px]" />
         </a>
 
-        <a href="tel:071234567" className="relative w-10 h-10 rounded-xl shadow-xl flex items-center justify-center hover:scale-110 transition-all duration-300 group overflow-hidden border border-white/10 bg-white">
-          <span className="absolute right-14 px-3 py-1.5 bg-black text-white text-xs tracking-widest rounded-md opacity-0 group-hover:opacity-100 whitespace-nowrap border border-white/10 shadow-lg pointer-events-none">快速撥號</span>
-          <img src="/phone-icon.jpg" alt="Phone" className="w-full h-full object-cover" onError={(e) => { e.target.onerror = null; e.target.src = "/phone-icon.png"; }} />
+        <a href="tel:071234567" className="relative w-10 h-10 flex items-center justify-center hover:scale-110 transition-transform duration-300 group">
+          <span className="absolute right-14 px-3 py-1.5 bg-[#3E2B23] text-white text-[11px] tracking-widest rounded-md opacity-0 group-hover:opacity-100 whitespace-nowrap shadow-md pointer-events-none transition-opacity z-20">快速撥號</span>
+          <img src="/phone-icon.jpg" alt="Phone" className="w-full h-full object-contain rounded-[9px]" onError={(e) => { e.target.onerror = null; e.target.src = "/phone-icon.png"; }} />
         </a>
 
       </div>
